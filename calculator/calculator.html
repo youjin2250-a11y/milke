@@ -2,112 +2,80 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>계산기</title>
+  <title>Calculator</title>
 
-  <!-- Tailwind -->
+  
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
-
-  <style>
-    body {
-      font-family: 'Gowun Dodum', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="min-h-screen flex items-center justify-center bg-white relative">
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-  <!-- 홈으로 -->
   <a href="../index.html"
-     class="fixed top-4 left-4
-            px-4 py-2 text-sm
-            rounded-full
-            bg-white/80 text-pink-500
-            font-semibold
-            shadow backdrop-blur
-            hover:bg-white transition">
+     style="
+       position: fixed;
+       top: 12px;
+       left: 12px;
+       z-index: 9999;
+       background: white;
+       padding: 6px 12px;
+       border-radius: 20px;
+       font-weight: bold;
+       text-decoration: none;
+       color: #333;
+     ">
     ← 홈
   </a>
 
-  <!-- 도트 배경 -->
-  <div class="absolute inset-0
-    bg-[radial-gradient(#f9a8d4_1.2px,transparent_1.2px)]
-    [background-size:18px_18px]">
-  </div>
+  <div class="calculator bg-white p-6 rounded-xl shadow-lg">
 
-  <!-- 계산기 카드 -->
-  <div class="relative bg-[#fffafb] rounded-3xl shadow-2xl p-6 w-80">
+    <input
+      type="text"
+      id="result"
+      class="w-full mb-4 p-2 text-right text-xl border rounded"
+      readonly
+    >
 
-    <input id="display"
-           type="text"
-           readonly
-           class="w-full mb-4 p-3 text-right text-2xl
-                  rounded-xl border border-pink-200
-                  bg-white text-gray-700">
+    <div class="grid grid-cols-4 gap-2">
+      <button class="btn">7</button>
+      <button class="btn">8</button>
+      <button class="btn">9</button>
+      <button class="btn">/</button>
 
-    <div class="grid grid-cols-4 gap-3">
-      <button onclick="clearDisplay()" class="btn col-span-2">C</button>
-      <button onclick="append('/')" class="btn">÷</button>
-      <button onclick="append('*')" class="btn">×</button>
+      <button class="btn">4</button>
+      <button class="btn">5</button>
+      <button class="btn">6</button>
+      <button class="btn">*</button>
 
-      <button onclick="append('7')" class="btn">7</button>
-      <button onclick="append('8')" class="btn">8</button>
-      <button onclick="append('9')" class="btn">9</button>
-      <button onclick="append('-')" class="btn">−</button>
+      <button class="btn">1</button>
+      <button class="btn">2</button>
+      <button class="btn">3</button>
+      <button class="btn">-</button>
 
-      <button onclick="append('4')" class="btn">4</button>
-      <button onclick="append('5')" class="btn">5</button>
-      <button onclick="append('6')" class="btn">6</button>
-      <button onclick="append('+')" class="btn">+</button>
-
-      <button onclick="append('1')" class="btn">1</button>
-      <button onclick="append('2')" class="btn">2</button>
-      <button onclick="append('3')" class="btn">3</button>
-      <button onclick="calculate()" class="btn row-span-2 bg-pink-300 text-white">=</button>
-
-      <button onclick="append('0')" class="btn col-span-2">0</button>
-      <button onclick="append('.')" class="btn">.</button>
+      <button class="btn">0</button>
+      <button class="btn">.</button>
+      <button class="btn">C</button>
+      <button class="btn">+</button>
     </div>
   </div>
 
   <style>
     .btn {
-      padding: 0.75rem;
-      background: #fbcfe8;
-      border-radius: 0.75rem;
+      background-color: #fbcfe8; /* 연핑크 */
+      padding: 10px;
+      border-radius: 8px;
       font-weight: 600;
-      color: #7a294f;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: background 0.2s;
+      cursor: pointer;
     }
+
     .btn:hover {
-      background: #f9a8d4;
+      background-color: #f9a8d4;
     }
   </style>
 
-  <script>
-    const display = document.getElementById("display");
 
-    function append(value) {
-      display.value += value;
-    }
-
-    function clearDisplay() {
-      display.value = "";
-    }
-
-    function calculate() {
-      try {
-        display.value = eval(display.value);
-      } catch {
-        display.value = "Error";
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 
 </body>
 </html>
