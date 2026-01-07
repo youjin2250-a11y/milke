@@ -23,55 +23,50 @@
 
   <!-- 도트 배경 -->
   <div class="absolute inset-0
-    bg-[radial-gradient(#f9a8d4_1.3px,transparent_1.3px)]
-    [background-size:20px_20px]">
+    bg-[radial-gradient(#f9a8d4_1.2px,transparent_1.2px)]
+    [background-size:18px_18px]">
   </div>
 
-  <!-- 집 전체 -->
-  <div class="relative flex flex-col items-center">
+  <!-- 메인 카드 -->
+  <div class="relative bg-[#fffafb]
+              rounded-[2.2rem]
+              shadow-2xl
+              px-14 py-16
+              text-center
+              max-w-md w-full">
 
-    <!-- 지붕 -->
-    <div class="w-0 h-0
-      border-l-[120px] border-l-transparent
-      border-r-[120px] border-r-transparent
-      border-b-[90px] border-b-pink-300">
+    <!-- 상단 장식 -->
+    <div class="w-14 h-1 bg-pink-300 rounded-full mx-auto mb-6"></div>
+
+    <h1 class="text-2xl text-pink-400 leading-relaxed mb-4">
+      어서오세요!<br>
+      유진의 첫 홈페이지입니다
+    </h1>
+
+    <!-- 버튼 -->
+    <div class="flex flex-col gap-4">
+      <a href="intro.html"
+         class="px-8 py-3 rounded-xl
+                bg-pink-300 text-white
+                font-semibold
+                hover:bg-pink-400 transition shadow">
+        자기소개
+      </a>
+
+      <a href="calculator/calculator.html"
+         class="px-8 py-3 rounded-xl
+                bg-rose-300 text-white
+                font-semibold
+                hover:bg-rose-400 transition shadow">
+        계산기
+      </a>
     </div>
 
-    <!-- 집 몸통 -->
-    <div class="bg-[#fffafb] rounded-b-[2.5rem] rounded-t-xl
-                shadow-xl px-12 py-14 text-center w-[320px]">
-
-      <h1 class="text-2xl text-pink-400 leading-relaxed mb-6">
-        어서오세요!<br>
-        유진의 첫 홈페이지입니다 🌸
-      </h1>
-
-
-
-      <!-- 버튼 -->
-      <div class="flex flex-col gap-4">
-        <a href="intro.html"
-           class="px-8 py-3 rounded-full
-                  bg-pink-300 text-white
-                  font-semibold
-                  hover:bg-pink-400 transition shadow">
-          자기소개
-        </a>
-
-        <a href="calculator/calculator.html"
-           class="px-8 py-3 rounded-full
-                  bg-rose-300 text-white
-                  font-semibold
-                  hover:bg-rose-400 transition shadow">
-          계산기
-        </a>
-      </div>
-
-    </div>
   </div>
 
 </body>
 </html>
+
 
 
 
